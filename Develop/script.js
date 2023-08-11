@@ -1,8 +1,12 @@
+//my input should be validated and at least one character type should be selected
+var characterLength = [];
+var choiceArray = [];
+var spChar = ['!','@','#','$','%','^','&','*','(',')','/','?','<','>'];
+var lcChar = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+var ucChar = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+var nmChar = ['1','2','3','4','5','6','7','8','9','0'];
+
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-generateBtn.addEventListener("click", writePassword);
-
 function writePassword() {
   var correctprompts = getPrompts();
   var passwordText = document.querySelector("#password");
@@ -14,6 +18,10 @@ function writePassword() {
   }
 }
 // make generatePassword function
+var generateBtn = document.querySelector("#generate");
+
+generateBtn.addEventListener("click", writePassword);
+
 function generatePassword() {
   var password = "";
   for(var i = 0; i < characterLength; i++) {
@@ -22,13 +30,6 @@ function generatePassword() {
   }
   return password
 }
-//my input should be validated and at least one character type should be selected
-var characterLength = [];
-var choiceArray = [];
-var spChar = ['!','@','#','$','%','^','&','*','(',')','/','?','<','>'];
-var lcChar = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-var ucChar = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-var nmChar = ['1','2','3','4','5','6','7','8','9','0'];
 
 function getPrompts() { //I am presented with a series of prompts for password criteria and confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
   var choiceArray = [];
@@ -50,8 +51,6 @@ function getPrompts() { //I am presented with a series of prompts for password c
   }
   if (prompt("Would you like numbers letters?")) { // checking if they want numbers in password.
     choiceArray = choiceArray.concat(nmChar);
-
   }
   return true;
 }
-function generatePassword() {}
